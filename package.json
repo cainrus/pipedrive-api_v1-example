@@ -1,0 +1,40 @@
+{
+  "name": "crm",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=crm:server node ./bin/www",
+    "watch": "if [ ! -f ./node_modules/gulp/bin/gulp.js ]; then echo $'\\033[0;32mprepare dev environment:\n npm install\\033[0m'; else ./node_modules/gulp/bin/gulp.js watch; fi",
+    "build": "if [ ! -f ./node_modules/gulp/bin/gulp.js ]; then echo $'\\033[0;32mprepare dev environment:\n npm install\\033[0m'; else ./node_modules/gulp/bin/gulp.js build; fi",
+    "install-dev": "npm install",
+    "postinstall": "node_modules/bower/bin/bower install"
+  },
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "body-parser": "~1.12.0",
+    "bower": "^1.4.1",
+    "cookie-parser": "~1.3.4",
+    "debug": "~2.1.1",
+    "express": "~4.12.2",
+    "handlebars": "^3.0.3",
+    "hbs": "^3.0.1",
+    "hogan-express": "^0.5.2",
+    "i18n-2": "^0.4.6",
+    "jquery": "^2.1.4",
+    "morgan": "~1.5.1",
+    "nib": "^1.1.0",
+    "serve-favicon": "~2.2.0",
+    "stylus": "0.42.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel": "^5.1.13",
+    "babelify": "^6.0.2",
+    "browserify": "^10.1.3",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.0.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

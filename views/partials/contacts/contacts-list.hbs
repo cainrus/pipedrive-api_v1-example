@@ -1,0 +1,10 @@
+<ul>
+    {{#each contacts}}
+        <li {{#if selected}}class="selected"{{/if}}data-id="{{id}}">
+            <a href="/contacts/{{id}}">
+                <span class="name">{{name}}</span>
+                {{#if org_name}}<span class="company">{{org_name}}</span>{{/if}}
+            </a>
+        </li>
+    {{/each}}
+</ul>

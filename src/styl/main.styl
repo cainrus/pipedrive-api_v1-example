@@ -1,0 +1,292 @@
+@import '../../node_modules/nib'
+global-reset()
+nested-reset()
+
+$navHeight=47px
+$sidebarWidth=280px;
+
+*
+  box-sizing: border-box
+  -webkit-font-smoothing: antialiased
+  font-smooth: always;
+
+body, html {
+  height: 100%;
+}
+
+body
+  line-height: 16px;
+  padding-top: $navHeight
+  padding-left: $sidebarWidth
+  overflow: hidden;
+  background: url("../images/bg-logo.png") center no-repeat, url("../images/bg.png");
+a
+  padding: 0;
+
+a
+  text-decoration: none;
+  color: #2d71ed;
+
+nav
+  transition: top 0.4s;
+  z-index: 2000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $navHeight
+  overflow: hidden;
+  background: #343434;
+  font-family: 'LucidaGrande-Bold', 'Tahoma';
+  letter-spacing: -0.5px;
+  box-shadow: inset 0px -1px 0 rgba(0, 0, 0, 0.7);
+  display: block;
+
+  ul, h1
+    padding: 0;
+    margin: 0;
+  li
+    position: relative;
+    float: left;
+    list-style: none;
+    white-space: nowrap;
+    margin: 0;
+    background: transparent url("/images/menuicons-64.png") no-repeat;
+    background-size: 32px auto;
+    padding: 12px 13px 13px 57px;
+    cursor: pointer
+    &:hover
+      background-color: rgba(0, 0, 0, 0.4);
+      text-shadow: none;
+    &:active
+      opacity: 0.8;
+      background-color: rgba(0, 0, 0, 0.3);
+
+  a
+    color: #fff;
+    display: block;
+    overflow: hidden;
+    font-weight: normal;
+    font-size: 1em !important;
+    line-height: 22px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-size: 32px auto;
+    height: 22px;
+    text-decoration: none;
+    text-transform: capitalize;
+
+
+
+
+  .nav-logo
+    background: transparent url("/images/logo_header.png") 12px 13px no-repeat;
+    background-size: 100px 22px;
+    padding: 0;
+    a
+      height: 47px;
+      text-indent: -9000px;
+      overflow: hidden;
+      display: block;
+      color: #fff;
+      width: 122px
+  .nav-deals
+    background-position: 15px 7px
+  .nav-inbox
+    background-position: 15px -1193px;
+  .nav-activities
+    background-position: 15px -1460px;
+    .day
+      position: absolute;
+      top: 19px;
+      left: 23px;
+      text-shadow: 0 1px 0 #fff;
+      font-size: 12px;
+
+  .nav-profile
+    background-position: 15px -393px;
+  .nav-other
+    background-position: 15px -524px;
+  .nav-user
+    background-image: none;
+    padding: 7px 30px 8px 12px;
+    float:right
+    img
+      width: 32px;
+      float left
+    ::after
+      content: "\25BE";
+      position: absolute;
+      right: 10px;
+      top: 15px;
+      color: #888;
+    span
+      display: block;
+      margin-left: 42px;
+    .username
+      font-size: 14px
+      color: white;
+    .company
+      font-size: 11px
+      color: #ccc;
+
+#contacts-list
+  white-space:nowrap;
+  width: $sidebarWidth
+  border-right: 1px solid #aeaeae;
+  box-shadow: 1px 0 1px 0 rgba(0,0,0,0.15);
+  height: 100%;
+  float: left
+  position: absolute;
+  left: 0;
+  background: #fff;
+
+  display: none
+  body[data-page="contacts"] &
+    display: block;
+
+  a
+    color: #000
+
+  li
+    padding-top: 8px
+    padding-left:10px
+    height: 50px
+    box-sizing: border-box
+    border-bottom: 1px solid #d6d6d6;
+    background linear-gradient(#ffffff, #f6f6f6)
+    transition: background, 50ms linear, border 50ms linear
+    cursor: pointer
+
+    &:hover
+      background: #EFEFEF;
+      transition-duration: 0s;
+    &.selected
+      background linear-gradient(#55a9e0, #287bc3)
+      span
+        color: #fff
+        text-shadow: 0 1px 1px #999;
+
+    span
+      display: block
+    .name
+      font-family: 'LucidaGrande-Bold';
+      font-size: 14px;
+    .company
+      color: #999
+      font-size: 12px;
+      line-height: 21px;
+
+article.content
+  display: block
+  &>.wrapper
+    width: 100%;
+    float: left;
+    border: 1px solid #b9b9b9;
+    display: block;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    padding: 8px 14px;
+    border-radius: 3px
+    background-color:#fff;
+  .half
+    width: 50%;
+    float: left;
+  h3
+    font-family: 'Museo-700';
+    font-weight: bold;
+    font-size: 21px;
+    padding: 20px 0;
+    text-transform: capitalize;
+
+
+
+#authorize-form
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  top: 50%;
+  height: auto;
+  margin-top: -100px;
+  padding: 35px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background: linear-gradient(#EAE8E8, #F5F5F5)
+  z-index: 2001;
+  transition: 0.25s ease-in-out;
+  transition-delay: .2s
+  box-shadow: 0 10px 20px 0 rgba(50, 50, 50, 0.75);
+  transform: scale(0);
+  body[data-page="auth"] &
+    transform: scale(1);
+
+  input
+    clear: both;
+    display: block;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    &[type="email"],&[type="password"]
+      text-indent: 5px;
+  .error
+    color: #b00000
+    font-size: 90%;
+    margin-top: 30px;
+
+#overlay
+  position:absolute;
+  width:100%;
+  height:100%;
+  background: linear-gradient(#BDBDBD, #f5f5f5)
+  z-index: 2000;
+  transition: 0.25s ease-in-out;
+  opacity: 0;
+  top:-100%;
+  body[data-page="auth"] &
+    opacity: 1;
+    top: 0;
+    left: 0
+
+
+
+body[data-page="contacts"] article.content
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative
+  .table
+    width: 100%;
+    display: table
+    table-layout: fixed;
+    overflow: hidden;
+    & > div
+      display: table-row;
+      & > div
+        display: table-cell;
+        line-height: 24px;
+        font-size: 14px;
+        min-width: 120px;
+        &:first-child
+          &:not(.header)
+            font-family: 'LucidaGrande-Bold';
+            font-weight: bold
+            font-size: 13px;
+            letter-spacing: -0.5px;
+          &:first-letter
+            text-transform: capitalize;
+
+  .header
+    text-transform: capitalize;
+  #contact-deals > .table
+    border: 1px solid #aaaaaa
+    border-radius: 4px;
+    box-sizing: border-box
+    margin-top: 8px;
+    &>div
+      background linear-gradient(#ffffff, #efefef)
+      &>div
+        &:first-child
+          padding-left: 12px
+        &:last-child
+          text-align: right
+          padding-right: 12px
