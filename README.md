@@ -11,6 +11,6 @@ npm start;
 Watch and compile changed files.
 ```bash
 npm install;
-npm watch;
+npm run watch;
 npm start;
 ```
